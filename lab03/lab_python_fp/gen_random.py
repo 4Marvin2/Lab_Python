@@ -8,10 +8,10 @@ def gen_random(num_count, begin, end):
 
 def main():
     gen = gen_random(5, 1, 3)
-    print(gen.__next__())
-    #gen = gen_random(5, 1, 3)
-    #for i in gen:
-        #print(i, end=' ')
+    # print(gen.__next__())
+    gen = gen_random(5, 1, 3)
+    for i in gen:
+        print(i, end=' ')
 
 
 if __name__ == "__main__":

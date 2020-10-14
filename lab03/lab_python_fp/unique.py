@@ -12,7 +12,7 @@ class Unique(object):
             self.ignore_case = False
 
     def __next__(self):
-        while True:                                         # как это работает?
+        while True:
             for item in self.items:
                 temp_item = item
                 self.counter += 1

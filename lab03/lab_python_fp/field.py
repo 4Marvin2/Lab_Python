@@ -21,10 +21,6 @@ def field(items, *args):
 
 
 def main():
-    # f = field(goods)
-    # for i in f:
-        # print(i, end=', ')
-    # print('\n', end='')
     f = field(goods, 'title')
     for i in f:
         print(i, end=', ')
