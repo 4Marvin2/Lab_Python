@@ -1,0 +1,56 @@
+<!--
+Попов М.А.
+Вариант запроса Д:
+    1. Данные класса 1 должны выводиться в виде таблицы с отступами от внутренних границ (cellpadding)
+    2. Данные класса 2 должны выводиться в виде нумерованного списка, используется нумерация римскими цифрами
+    3. С использованием технологии CSS реализуйте чересстрочное форматирование ("зебру") для данных таблицы
+Предметная область 18: Музыкальное произведение - Оркестр
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>ИУ5-55 Попов М.А.</title>
+</head>
+<body>
+    <h3>Музыкальные произведения</h3>
+    <table cellpadding="10">
+        <tr class="td_color_1">
+            <th>Название</th>
+            <th>Длительность</th>
+            <th>Год написания</th>
+        </tr>
+        <tr class="td_color_2">
+            <td>Toccata</td>
+            <td>3:09</td>
+            <td>1950</td>
+        </tr>
+        <tr class="td_color_1">
+            <td>Love is blue</td>
+            <td>2:37</td>
+            <td>1968</td>
+        </tr>
+        <tr class="td_color_2">
+            <td>Peer Gynt, Op. 23</td>
+            <td>2:25</td>
+            <td>1875</td>
+        </tr>
+        <tr class="td_color_1">
+            <td>Eine kleine Nachtmusik, K.525: I. Allegro</td>
+            <td>7:50</td>
+            <td>1787</td>
+        </tr>
+    </table>
+    <h3>Оркестры</h3>
+    <ol type="I">
+        <li>Royal Concertgebouw Orchestra</li>
+        <li>Berlin Philharmonic Orchestra</li>
+        <li>Vienna Philharmonic Orchestra</li>
+        <li>London Symphony Orchestra</li>
+        <li>Chicago Symphony Orchestra</li>
+        <li>Cleveland Orchestra</li>
+    </ol>
+</body>
+</html>
