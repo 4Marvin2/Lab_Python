@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+    <form action="http://somesite.com/script.asp" method="get" target="right">
+        <fieldset>
+            <legend>Пользователь</legend>
+            <input name="login" type="text" placeholder="Логин" align="center"><br><br>
+            <input name="password" type="password" placeholder="Пароль" align="center"><br><br>
+            <input name="button_login" type="button" value="Login" onclick="alert('Кнопка нажата')" align="center">
+        </fieldset>
+
+        <fieldset>
+            <legend>Данные</legend>
+            <table width="500px">
+                <tr>
+                    <th align="left">Выбере несколько вариантов:</th>
+                    <th align="left">Выбере один вариант:</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="chb_1" type="checkbox">
+                        <label for="chb_1">Вариант 1</label><br>
+                        <input id="chb_2" type="checkbox">
+                        <label for="chb_2">Вариант 2</label><br>
+                        <input id="chb_3" type="checkbox">
+                        <label for="chb_3">Вариант 3</label><br>
+                        <input id="chb_4" type="checkbox">
+                        <label for="chb_4">Вариант 4</label><br>
+                        <input id="chb_5" type="checkbox">
+                        <label for="chb_5">Вариант 5</label>
+                    </td>
+                    <td>
+                        <input id="r_1" name="variations" type="radio">
+                        <label for="r_1">Вариант 1</label><br>
+                        <input id="r_2" name="variations" type="radio">
+                        <label for="r_2">Вариант 2</label><br>
+                        <input id="r_3" name="variations" type="radio">
+                        <label for="r_3">Вариант 3</label><br>
+                        <input id="r_4" name="variations" type="radio">
+                        <label for="r_4">Вариант 4</label>
+                    </td>
+                </tr>
+            </table><br><br>
+
+
+
+            <label for="sel">Список</label><br>
+            <select id="sel" size="5">
+                <option selected value="var_1">Вариант 1</option>
+                <option value="var_2">Вариант 2</option>
+                <option value="var_3">Вариант 3</option>
+                <option value="var_4">Вариант 4</option>
+                <option value="var_5">Вариант 5</option>
+                <option value="var_6">Вариант 6</option>
+                <option value="var_7">Вариант 7</option>
+                <option value="var_8">Вариант 8</option>
+            </select><br><br>
+
+            <label for="mul_sel">Выпадающий список</label>
+            <select id="mul_sel">
+                <option selected value="mul_var_1">Вариант 1</option>
+                <option value="mul_var_2">Вариант 2</option>
+                <option value="mul_var_3">Вариант 3</option>
+                <option value="mul_var_4">Вариант 4</option>
+                <option value="mul_var_5">Вариант 5</option>
+            </select><br><br>
+
+            <label for="dl">Список на основе текстового поля</label>
+            <input type="text" name="datalist1" list="comp_combobox_datalist" id="dl"/>
+            <datalist id="comp_combobox_datalist">
+                <option selected value="dl_1">Вариант 1</option>
+                <option value="dl_2">Вариант 2</option>
+                <option value="dl_3">Вариант 3</option>
+                <option value="dl_4">Вариант 4</option>
+            </datalist>
+        </fieldset>
+
+        <fieldset>
+            <legend>Пожелания</legend>
+            <textarea rows="6" cols="90"></textarea>
+        </fieldset><br>
+
+        <input type="image" src=".\img\login.png" width="50px" align="right">
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+</html>
