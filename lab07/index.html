@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/941547f2e9.js" crossorigin="anonymous"></script>
+
+    <style>
+        html {
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        main {
+            overflow-x: hidden;
+        }
+        footer {
+            overflow-x: hidden;
+        }
+        .signup>input:nth-of-type(1):invalid~input:nth-of-type(2):invalid~.progress>.progress-bar {
+            width: 0%;
+        }
+        .signup>input:nth-of-type(1):valid~input:nth-of-type(2):invalid~.progress>.progress-bar {
+            width: 50%;
+        }
+        .signup>input:nth-of-type(1):invalid~input:nth-of-type(2):valid~.progress>.progress-bar {
+            width: 50%;
+        }
+        .signup>input:nth-of-type(1):valid~input:nth-of-type(2):valid~.progress>.progress-bar {
+            width: 100%;
+        }
+    </style>
+
+    <title>lab07</title>
+</head>
+<main class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid modal-header">
+            <a class="navbar-brand" href="index.html">IC5</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <div class="float-end">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" style="background-color: #0f5132; border-color: #0f5132">
+                        <i class="fas fa-user"></i> Sign Up
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="g-3 needs-validation signup" novalidate>
+                                        <div class="container row">
+                                            <div class="col-md-4">
+                                                <label for="validationCustom01" class="form-label">User name</label>
+                                                <input type="text" class="form-control" id="validationCustom01" placeholder="econ22" required>
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="validationCustom02" class="form-label">First name</label>
+                                                <input type="text" class="form-control" id="validationCustom02" placeholder="Mark" required>
+                                                <div class="invalid-feedback">
+                                                    Please enter your first name.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="validationCustom03" class="form-label">Last name</label>
+                                                <input type="text" class="form-control" id="validationCustom03" placeholder="Otto" required>
+                                                <div class="invalid-feedback">
+                                                    Please enter your last name.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <label for="validationCustom04" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="validationCustom04" required>
+                                        <div class="invalid-feedback">
+                                            Please enter password.
+                                        </div>
+                                        <p></p>
+                                        <label for="validationCustom05" class="form-label">Repeat password</label>
+                                        <input type="password" class="form-control" id="validationCustom05" required>
+                                        <div class="invalid-feedback">
+                                            Please enter password again.
+                                        </div>
+                                        <p></p>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="0%" aria-valuemin="0%" aria-valuemax="100%"></div>
+                                        </div>
+                                        <p></p>
+                                        <label for="validationCustom06" class="form-label">Country</label>
+                                        <input type="text" class="form-control" id="validationCustom06">
+                                        <p></p>
+                                        <label for="validationCustom07" class="form-label">City</label>
+                                        <select class="form-select" id="validationCustom07">
+                                            <option selected disabled value="">Choose...</option>
+                                            <option>Moscow</option>
+                                            <option>Saint-Petersburg</option>
+                                            <option>Other</option>
+                                        </select>
+                                        <p></p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                            <label class="form-check-label" for="invalidCheck">
+                                                Agree to terms and conditions
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                You must agree before submitting.
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" type="submit">Sign Up</button>
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" style="background-color: #0f5132; border-color: #0f5132">
+                        <i class="fas fa-user"></i> Login
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="row needs-validation signup" novalidate>
+                                        <label for="validation_login_Custom01" class="form-label">User name</label>
+                                        <input type="text" class="form-control" id="validation_login_Custom01" placeholder="econ22" required>
+                                        <div class="invalid-feedback">
+                                            Please choose a username.
+                                        </div>
+                                        <p></p>
+                                        <label for="validation_login_Custom02" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="validation_login_Custom02" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your password.
+                                        </div>
+                                        <p></p>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" type="submit">Login</button>
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <table class="table table-dark table-borderless">
+        <tbody>
+            <tr>
+                <td class="align-bottom" style="text-align: right" width="50%"><h2>Почему мы</h2></td>
+                <td class="align-middle" rowspan="2"><img src=".\img\first.jpg" class="rounded img-fluid" style="max-width: 100%; height: auto"></td>
+            </tr>
+            <tr>
+                <td class="align-middle" style="text-align: right" width="50%">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения существенных финансовых и административных условий. Задача организации, в особенности же консультация с широким активом представляет собой интересный эксперимент проверки модели развития. Задача организации, в особенности же укрепление и развитие структуры играет важную роль в формировании форм развития. Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт рамки и место обучения кадров способствует подготовки и реализации соответствующий условий активизации.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-dark table-borderless">
+        <tbody>
+        <tr>
+            <td class="align-middle" rowspan="2"><img src=".\img\second.jpg" class="rounded img-fluid" style="max-width: 100%; height: auto"></td>
+            <td class="align-bottom" style="text-align: left" width="50%"><h2>О нас</h2></td>
+        </tr>
+        <tr>
+
+            <td class="align-middle" style="text-align: left" width="50%">Товарищи! реализация намеченных плановых заданий позволяет оценить значение соответствующий условий активизации. С другой стороны постоянный количественный рост и сфера нашей активности способствует подготовки и реализации систем массового участия. Задача организации, в особенности же новая модель организационной деятельности способствует подготовки и реализации дальнейших направлений развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям.<br>Повседневная практика показывает, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Равным образом рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании модели развития. Таким образом консультация с широким активом способствует подготовки и реализации систем массового участия.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-dark table-borderless">
+        <tbody>
+        <tr>
+            <td class="align-bottom" style="text-align: right" width="50%"><h2>Наши клиенты</h2></td>
+            <td class="align-middle" rowspan="2"><img src=".\img\third.jpg" class="rounded img-fluid" style="max-width: 100%; height: auto"></td>
+        </tr>
+        <tr>
+            <td class="align-middle" style="text-align: right" width="50%">С другой стороны новая модель организационной деятельности позволяет выполнять важные задания по разработке соответствующий условий активизации. Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа дальнейших направлений развития. Задача организации, в особенности же сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. Не следует, однако забывать, что реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. С другой стороны дальнейшее развитие различных форм деятельности позволяет оценить значение системы обучения кадров, соответствует насущным потребностям.</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<footer class="bg-dark modal-footer">
+    <address class="container-fluid">
+        <p style="color: #d3d3d4">Контакты: +7-(922)-724-47-88</p>
+    </address>
+    <p class="container-fluid text-center" style="color: #d3d3d4">2020 BMSTU</p>
+</footer>
+
+    <script>
+        // JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+<!-- Optional JavaScript -->
+<!-- Popper.js first, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>
