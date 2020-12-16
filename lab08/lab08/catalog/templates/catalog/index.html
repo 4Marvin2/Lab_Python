@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'catalog/style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid modal-header">
+            <a class="navbar-brand" href="/catalog/">Каталог</a>
+        </div>
+    </nav>
+    <main class="container-fluid bg-dark">
+        <div class="row justify-content-left">
+            <div class="col-4">
+                {% if processors_list %}
+                    <ul type="nav">
+                    {% for processor in processors_list %}
+                        <li class="nav-item">
+                            <a class="nav-link list" href="{% url 'catalog:detail' processor.id %}">{{ processor.name }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No processors are available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <footer class="high bg-dark">
+    </footer>
+</body>
+</html>

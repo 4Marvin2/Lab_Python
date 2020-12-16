@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'catalog/style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid modal-header">
+            <a class="navbar-brand" href="/catalog/">Каталог</a>
+        </div>
+    </nav>
+    <main class="container-fluid bg-dark">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <h1 class="text-center text-light">{{ processor.name }}</h1>
+                <table class="table table-dark table-borderless">
+                    <tr>
+                        <td class="text-light td-text-short">{{ description.description }}</td>
+                        <td>
+                            {% if processor.id == 1 %}
+                            <img src="{% static "catalog/images/i3.png" %}" alt="image of i3" class="rounded img-fluid">
+                            {% endif %}
+                            {% if processor.id == 2 %}
+                            <img src="{% static "catalog/images/i5.png" %}" alt="image of i3" class="rounded img-fluid">
+                            {% endif %}
+                            {% if processor.id == 3 %}
+                            <img src="{% static "catalog/images/i7.png" %}" alt="image of i3" class="rounded img-fluid">
+                            {% endif %}
+                            {% if processor.id == 4 %}
+                            <img src="{% static "catalog/images/i9.png" %}" alt="image of i3" class="rounded img-fluid">
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="high bg-dark">
+    </footer>
+</body>
+</html>
