@@ -1,0 +1,31 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.text-center {
+    text-align: center;
+}
+.text-light {
+    color: aliceblue;
+}
+.td-text-short {
+    width: 50%;
+}
+.high {
+    height: 700px;
+}
+.list {
+    color: aliceblue; /* Цвет обычной ссылки */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+   }
+   a:hover {
+    color: aqua; /* Цвет ссылки при наведении на нее курсора мыши */
+    text-decoration: none; /* Добавляем подчеркивание */
+   }
+li {
+    list-style-type: none;
+   }
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}

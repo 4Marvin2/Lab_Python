@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'schedule/css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid modal-header">
+            <a class="navbar-brand" href="/schedule/"><h3>Расписание экзаменов</h3></a>
+        </div>
+    </nav>
+    <main class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-10">
+                <table class="table table-dark table-borderless">
+                    <tr>
+                        <th><h4>Группы</h4></th>
+                        <th><h4>Преподаватели</h4></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% if group_list %}
+                                <ul>
+                                {% for group in group_list %}
+                                    <li>
+                                        <a class="list" href="{% url 'schedule:detail_student' group.id %}"><h5>{{ group.name }}</h5></a>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p>No group are available.</p>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if exam_list %}
+                                <ul>
+                                {% for exam in exam_list %}
+                                    <li>
+                                        <a class="list" href="{% url 'schedule:detail_lecturer' exam.lecturer %}"><h5>{{ exam.lecturer }}</h5></a>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p>No lecturer are available.</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </main>
+    <footer class="high bg-dark">
+    </footer>
+</body>
+</html>
