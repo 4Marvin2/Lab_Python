@@ -19,7 +19,7 @@
             </div>
             <div class="float-end">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary green_button" data-toggle="modal" data-target="#signUpModal">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#signUpModal">
                     Внести изменения
                 </button>
 
@@ -53,15 +53,21 @@
                                         Пожалуйста выберите группу
                                     </div>
                                     <p></p>
-                                    <label for="validationCustom03" class="form-label">Время</label>
-                                    <input type="datetime-local" class="form-control" id="validationCustom03" value="{{ schedule.lesson_time }}" name="lesson_time" required>
+                                    <label for="validationCustom03" class="form-label">Время консультации</label>
+                                    <input type="datetime-local" class="form-control" id="validationCustom03" value="{{ schedule.consultation_time }}" name="consultation_time" required>
                                     <div class="invalid-feedback">
-                                        Пожалуйста выберите время
+                                        Пожалуйста выберите время консультации
+                                    </div>
+                                    <p></p>
+                                    <label for="validationCustom04" class="form-label">Время экзамена</label>
+                                    <input type="datetime-local" class="form-control" id="validationCustom04" value="{{ schedule.lesson_time }}" name="lesson_time" required>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста выберите время экзамена
                                     </div>
                                     <p></p>
                                     <div class="modal-footer">
-                                        <input class = "btn btn-primary green_button" type="submit" value="Save" name="_save">
-                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                        <input class = "btn btn-success" type="submit" value="Save" name="_save">
+                                        <button class="btn btn-danger" type="button" data-dismiss="modal">Close</button>
                                     </div>
                                     <script>
                                         // JavaScript for disabling form submissions if there are invalid fields
@@ -101,14 +107,16 @@
                 <table class="table table-dark table-borderless table-striped">
                     <tr>
                         <th class="text-center">Группа</th>
-                        <th class="text-center">Время проведения</th>
+                        <th class="text-center">Консультация</th>
+                        <th class="text-center">Экзамен</th>
                     </tr>
                     {% for group in group_list %}
                         <tr>
                             <td class="text-center">{{ group.name }}</td>
                             {% for schedule in schedule_list %}
                                 {% if schedule.group == group %}
-                                    <td class="text-center">{{ schedule.lesson_time }}</td>
+                                    <td class="text-center">{{ schedule.consultation_time|date:'d-m-Y H:i' }}</td>
+                                    <td class="text-center">{{ schedule.lesson_time|date:'d-m-Y H:i' }}</td>
                                 {% endif %}
                             {% endfor %}
                         </tr>
@@ -133,15 +141,25 @@
             },
             x: 'x',
             columns: [
-                ['x', "{{ schedule_date_list.0 }}", "{{ schedule_date_list.1 }}", "{{ schedule_date_list.2 }}", "{{ schedule_date_list.3 }}", "{{ schedule_date_list.4 }}"],
-                ['Количество экзаменов', "{{ exam_count.0 }}", "{{ exam_count.1 }}", "{{ exam_count.2 }}", "{{ exam_count.3 }}", "{{ exam_count.4 }}"]
-            ]
+                ['x', "{{ schedule_date_list.0 }}", "{{ schedule_date_list.1 }}", "{{ schedule_date_list.2 }}", "{{ schedule_date_list.3 }}", "{{ schedule_date_list.4 }}", "{{ schedule_date_list.5 }}", "{{ schedule_date_list.6 }}", "{{ schedule_date_list.7 }}", "{{ schedule_date_list.8 }}", "{{ schedule_date_list.9 }}"],
+                ['Количество экзаменов', "{{ exam_count.0 }}", "{{ exam_count.1 }}", "{{ exam_count.2 }}", "{{ exam_count.3 }}", "{{ exam_count.4 }}", "{{ exam_count.5 }}", "{{ exam_count.6 }}", "{{ exam_count.7 }}", "{{ exam_count.8 }}", "{{ exam_count.9 }}"],
+                ['Количество консультаций', "{{ cons_count.0 }}", "{{ cons_count.1 }}", "{{ cons_count.2 }}", "{{ cons_count.3 }}", "{{ cons_count.4 }}", "{{ cons_count.5 }}", "{{ cons_count.6 }}", "{{ cons_count.7 }}", "{{ cons_count.8 }}", "{{ cons_count.9 }}"]
+            ],
+            type: 'bar',
+            groups: [
+            ['Количество экзаменов', 'Количество консультаций']
+        ]
+        },
+        bar: {
+            width: {
+                ratio: 0.5
+            }
         },
         axis: {
             x: {
                 type: 'timeseries',
                 tick: {
-                    format: '%d-%m-%Y'
+                    format: '%d-%m'
                 }
             },
             y: {
@@ -150,7 +168,7 @@
             }
         },
         color: {
-            pattern: ['#00ffff']
+            pattern: ['#ca4141', '#40bcbc']
         }
     });
     </script>

@@ -18,13 +18,14 @@
         </div>
     </nav>
     <main class="container-fluid bg-dark">
-        <div class="row">
+        <div class="row justify-content-around">
             <div class="col-6">
                 <h1 class="text-center text-light">{{ group.name }}</h1>
                 <table class="table table-dark table-borderless table-striped">
                     <tr>
                         <th class="text-center">Экзамен</th>
-                        <th class="text-center">Время проведения</th>
+                        <th class="text-center">Консультация</th>
+                        <th class="text-center">Экзамен</th>
                         <th class="text-center">Преподаватель</th>
                     </tr>
                     {% for exam in exam_list %}
@@ -32,7 +33,8 @@
                             <td class="text-center">{{ exam.name }}</td>
                             {% for schedule in schedule_list %}
                                 {% if schedule.lesson == exam %}
-                                    <td class="text-center">{{ schedule.lesson_time }}</td>
+                                    <td class="text-center"><time datetime="">{{ schedule.consultation_time|date:'d-m-Y H:i' }}</time></td>
+                                    <td class="text-center">{{ schedule.lesson_time|date:'d-m-Y H:i' }}</td>
                                 {% endif %}
                             {% endfor %}
                             <td class="text-center">{{ exam.lecturer }}</td>

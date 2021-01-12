@@ -18,10 +18,10 @@
     color: aliceblue; /* Цвет обычной ссылки */
     text-decoration: none; /* Убираем подчеркивание у ссылок */
    }
-   a:hover {
+a:hover {
     color: aqua; /* Цвет ссылки при наведении на нее курсора мыши */
     text-decoration: none; /* Добавляем подчеркивание */
-   }
+}
 li {
     list-style-type: none;
    }
@@ -29,7 +29,20 @@ ul {
     margin-left: 0;
     padding-left: 0;
 }
-.green_button {
-    background-color: #0f5132;
-    border-color: #0f5132;
+.logo {
+    width: 30px;
+    height: 30px;
 }
+.navbar-logo {
+    font-size: 2em;
+    color: aliceblue; /* Цвет обычной ссылки */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+.navbar-logo:hover {
+    color: aliceblue; /* Цвет ссылки при наведении на нее курсора мыши */
+    text-decoration: none; /* Добавляем подчеркивание */
+}
+img {
+    align-content: center;
+}
+

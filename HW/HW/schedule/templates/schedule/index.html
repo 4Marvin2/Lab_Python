@@ -8,54 +8,83 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'schedule/css/style.css' %}">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid modal-header">
-            <a class="navbar-brand" href="/schedule/"><h3>Расписание экзаменов</h3></a>
-        </div>
-    </nav>
-    <main class="container-fluid bg-dark">
-        <div class="row">
-            <div class="col-10">
-                <table class="table table-dark table-borderless">
-                    <tr>
-                        <th><h4>Группы</h4></th>
-                        <th><h4>Преподаватели</h4></th>
-                    </tr>
-                    <tr>
-                        <td>
-                            {% if group_list %}
-                                <ul>
-                                {% for group in group_list %}
-                                    <li>
-                                        <a class="list" href="{% url 'schedule:detail_student' group.id %}"><h5>{{ group.name }}</h5></a>
-                                    </li>
-                                {% endfor %}
-                                </ul>
-                            {% else %}
-                                <p>No group are available.</p>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if exam_list %}
-                                <ul>
-                                {% for exam in exam_list %}
-                                    <li>
-                                        <a class="list" href="{% url 'schedule:detail_lecturer' exam.lecturer %}"><h5>{{ exam.lecturer }}</h5></a>
-                                    </li>
-                                {% endfor %}
-                                </ul>
-                            {% else %}
-                                <p>No lecturer are available.</p>
-                            {% endif %}
-                        </td>
-                    </tr>
-                </table>
+            <a class="navbar-brand" href="/schedule/">
+<!--                <img src="{% static "schedule/images/BMSTU_logo.png" %}" alt="BMSTU logo" width="70" height="70" class="img-fluid">-->
+                <h3>Расписание экзаменов</h3>
+            </a>
+            <div class="float-end">
+                <div class="justify-content-center">
+                    <table>
+                        <tr>
+                            <td class="text-center">
+                                <img class="img-fluid" src="{% static "schedule/images/BMSTU_logo.png" %}" alt="BMSTU logo" width="50" height="50">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <p class="text-light">МГТУ им. Н.Э. Баумана</p>
+                            </td>
 
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
+    </nav>
+
+    <main class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-2">
+                <div class="card text-white bg-dark">
+                    <div class="card-header">
+                        <h4>Группы</h4>
+                    </div>
+                    {% if group_list %}
+                        <ul class="list-group list-group-flush">
+                            {% for group in group_list %}
+                                <li class="list-group-item bg-dark">
+                                    <a class="list" href="{% url 'schedule:detail_student' group.id %}"><h5>{{ group.name }}</h5></a>
+                                </li>
+                            {% endfor %}
+                    </ul>
+                    {% else %}
+                        <p>No group are available.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card text-white bg-dark">
+                    <div class="card-header">
+                        <h4>Преподаватели</h4>
+                    </div>
+                    {% if exam_list %}
+                        <ul class="list-group list-group-flush">
+                            {% for exam in exam_list %}
+                                <li class="list-group-item bg-dark">
+                                    <a class="list" href="{% url 'schedule:detail_lecturer' exam.lecturer %}"><h5>{{ exam.lecturer }}</h5></a>
+                                </li>
+                            {% endfor %}
+                    </ul>
+                    {% else %}
+                        <p>No lecturer are available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid high">
+
+        </div>
     </main>
-    <footer class="high bg-dark">
+
+    <footer class="modal-footer bg-dark">
+        <address class="container-fluid">
+            <p style="color: #d3d3d4">Контакты: +7-(922)-724-47-88</p>
+        </address>
+        <p class="container-fluid text-center" style="color: #d3d3d4">2020 BMSTU</p>
     </footer>
 </body>
 </html>
